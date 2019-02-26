@@ -15,7 +15,7 @@ body, html {
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1{
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -24,18 +24,19 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('./images/night_sky.png');
+  background-image: url('./images/GC.jpg');
   min-height: 100%;
 }
+
 
 .w3-wide {letter-spacing: 10px;}
 .w3-hover-opacity {cursor: pointer;}
 
 /* Turn off parallax scrolling for tablets and phones */
 @media only screen and (max-device-width: 1600px) {
-  .bgimg-1{
+  .bgimg-1, .bgimg-2, .bgimg-3{
     background-attachment: scroll;
-    min-height: 660px;
+    min-height: 200px;
   }
 }
 </style>
@@ -48,51 +49,35 @@ body, html {
     <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
       <i class="fa fa-bars"></i>
     </a>
-    <a href="#home" class="w3-bar-item w3-button w3-black"> HOME </a>
+    <a href="./index.html" class="w3-bar-item w3-button w3-white"> HOME </a>
     <a href="./cv.html" class="w3-bar-item w3-button w3-hide-small w3-white"><i class="fa fa-user"></i> VITAE</a>
     <a href="./research.html" class="w3-bar-item w3-button w3-hide-small w3-white"><i class="fa fa-search"></i>RESEARCH</a>
     <a href="./pubs.html" class="w3-bar-item w3-button w3-hide-small w3-white"><i class="fa fa-th"></i> PUBLICATIONS</a>
-    <a href="./contact.html" class="w3-bar-item w3-button w3-hide-small w3-white"><i class="fa fa-envelope"></i> CONTACT</a>
+    <a href="#home" class="w3-bar-item w3-button w3-hide-small w3-black"><i class="fa fa-envelope"></i> CONTACT</a>
   </div>
 
   <!-- Navbar on small screens -->
   <div id="navDemo" class="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium">
-    <a href="./cv.html" class="w3-bar-item w3-button" onclick="toggleFunction()">VITAE</a>
+    <a href="./index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">VITAE</a>
     <a href="./research.html" class="w3-bar-item w3-button" onclick="toggleFunction()">RESEARCH</a>
     <a href="./pubs.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PUBLICATIONS</a>
-    <a href="./contact.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
+    <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
 </div>
 
 <!-- First Parallax Image with Logo Text -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
-  <div class="w3-display-middle" style="white-space:nowrap;">
-    <span class="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
-        Zhijie Qu <span class="w3-hide-small">(屈稚杰)</span> </span>
-      <h3 align="center", style="font-size:150%; color:white"> Graduate @ UMich </h3>
-  </div>
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-content w3-container w3-padding-64" id="cv">
-  <h3 class="w3-center">ABOUT ME</h3>
-  <p class="w3-center"><em>I Love Gases & Galaxies </em></p>
-  <div class="w3-row">
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p style="font-size:150%"><b><i class="fa fa-user w3-margin-right"></i>Zhijie Qu (屈稚杰)</b></p><br>
-      <img src="./images/portrait.jpeg" class="w3-round w3-image w3-opacity w3-hover-opacity-off" alt="Photo of Me" width="250" height="266">
-    </div>
-
-    <!-- Hide this text on small devices -->
-    <div class="w3-col m6 w3-center w3-padding-large">
-      <p style="font-size:150%">AAAA</p>
-    </div>
-  </div>
+<div>
+    <p> </p>
 </div>
+
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
-  <p> Zhijie Qu | University of Michigan</a></p>
+  <p> Zhijie Qu | University of Michigan </a></p>
 </footer>
  
 <script>
