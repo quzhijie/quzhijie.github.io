@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>Qu's Homepage</title>
+<title>Zhijie Qu's Homepage</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -21,11 +21,16 @@ body, html {
   background-repeat: no-repeat;
   background-size: cover;
 }
-
+    
 /* First image (Logo. Full height) */
 .bgimg-1 {
   background-image: url('./images/GC.jpg');
   min-height: 100%;
+}
+
+div.ex1 {
+  max-width:600px;
+  margin: auto;
 }
 
 
@@ -36,7 +41,7 @@ body, html {
 @media only screen and (max-device-width: 1600px) {
   .bgimg-1, .bgimg-2, .bgimg-3{
     background-attachment: scroll;
-    min-height: 200px;
+    min-height: 250px;
   }
 }
 </style>
@@ -70,14 +75,59 @@ body, html {
 </div>
 
 <!-- Container (About Section) -->
-<div class="w3-center w3-white">
-    <p> AA</p>
+<div class="w3-container w3-center">
+    <h2 style="color:black"> Zhijie Qu (屈稚杰)</h2>
+    <a class="shield-a">
+      <img  src="https://img.shields.io/badge/update-Mar. 2019-red.svg">
+    </a>
+    <a class="shield-a" href="./files/cv.pdf">
+      <img  src="https://img.shields.io/badge/full version-PDF-lightgrey.svg">
+    </a>
+</div>
+<!-- CV -->
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">EDUCATION </h3>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> Ph.D. Candidate in Astrophysics </p>
+    <p align="right"> University of Michigan, 2015-present </p>
+      <p align="right"> Advisor: Joel N. Bregman </p>
+    <p align="left", style="color:black", class=" w3-panel w3-leftbar w3-border-deep-orange"> B.S. in Astronomy (Graduate with Honors) </p>
+      <p align="right"> Peking University, 2011-2015 </p> 
+      <p align="right"> Advisor: Renxin Xu and M.B.N. (Thijs) Kouwenhoven </p>
+</div>
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">SELECTED AWARDS</h3>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2015 -- Weiming Physics Scholarship, School of Physics, Peking University. </p>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2015 -- Xingcheng Undergrad Research Forum, First Prize, Peking University. </p>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2014 -- NAOC Scholarship, National Astronomical Observatories, CAS. </p>
 </div>
 
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">RESEARCH ADVISING</h3>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> Ryan Lindley (Undergrad @ UMich), 2019-present </p>
+    <p align="right"> "The C IV Absorption Line Survey of the Milky Way" </p>
+</div>
+
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">SELECTED TALKS</h3>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> Jul. 2018 -- CGM Workshop 2018, Contributing Talk, NWU, Evanston, Illinois </p>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> Mar. 2018 -- Dinner Talk, PKU, Beijing, China </p>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> Mar. 2018 -- Colloquium Talk, PMO, Nanjing, China </p>
+</div>
+
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">SELECTED PUBLICATIONS</h3>
+    <p align="center"> <a href="./pubs.html"> List of Publications </a> </p>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> "The Warm Gaseous Disk and the Anisotropic Gaseous Halo of the Milky Way"</p>
+    <p align="right"> <b style="color:black"> Zhijie Qu </b>, Joel Bregman, Yong Zheng, 2019, Submitted </p>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> "The Mass and Absorption Columns of Galactic Gaseous Halos" </p>
+    <p align="right"> <b style="color:black"> Zhijie Qu </b>, and Joel Bregman, 2018, ApJ, 856, 5 </p>
+    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> "A Hot Gaseous Galaxy Halo Candidate with Mg x Absorption" </p>
+    <p align="right"> <b style="color:black"> Zhijie Qu </b>, and Joel Bregman, 2016, ApJ, 832, 189 </p>
+</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16 w3-opacity w3-hover-opacity-off">
-  <p> Zhijie Qu | University of Michigan </a></p>
+  <p style="font-family: 'Crimson Text', serif; text-transform: capitalize"> Zhijie Qu | University of Michigan </a></p>
 </footer>
  
 <script>
