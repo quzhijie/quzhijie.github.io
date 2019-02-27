@@ -43,10 +43,17 @@ body, html {
     
 
 div.ex2{
-  max-width:600px;
+  max-width:1200px;
   min-height:350px;
   margin: auto;
 }
+
+div.ex3{
+  width:380px;
+  min-height:200px;
+  margin: auto;
+}
+
 </style>
 
 <body>
@@ -81,10 +88,71 @@ div.ex2{
 </div>
 
 <!-- Container (About Section) -->
-<div class="ex2 w3-container w3-center w3-cell-middle">
-    <h2 style="color:black"> COMING SOON...</h2>
+<div class="w3-container w3-center">
+  <h1 class="w3-text-light-blue">RESEARCH</h1>
 </div>
 
+<!-- research items -->
+<div class="ex2">
+  <div class="w3-row-padding w3-margin-top w3-cell_middle">
+    <button style="font-size:110%" onclick="click_accord('research1')" class="w3-btn w3-block w3-light-blue w3-left-align">
+      Multi-Wavelength Observations of the Hot Gaseous Halo</button>
+    <div id="research1" class="w3-hide">
+      <p> </p>
+      <div class="w3-third">
+        <div class="w3-card-4" style="width:380px">
+          <a target="_blank" href="https://iopscience.iop.org/article/10.3847/0004-637X/832/2/189/pdf"><img src="./images/mgx.png" alt="Norway" style="width:380px;height:380px"></a>
+          <div class="ex3 w3-container w3-center">
+            <p>AA</p>
+            <p>AA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding w3-margin-top w3-cell_middle">
+    <button style="font-size:110%" onclick="click_accord('research2')" class="w3-btn w3-block w3-light-blue w3-left-align">
+      Analytic Models</button>
+    <div id="research2" class="w3-hide">
+      <p> </p>
+      <div class="w3-third">
+        <div class="w3-card-4" style="width:380px">
+          <a target="_blank" href="https://arxiv.org/pdf/1801.05833.pdf"><img src="./images/halo_model.png" alt="Norway" style="width:380px;height:380px"></a>
+          <div class="ex3 w3-container w3-center">
+            <p>BB</p>
+            <p>BB</p>
+          </div>
+        </div>
+      </div>
+      <div class="w3-third">
+        <div class="w3-card-4" style="width:380px">
+          <a target="_blank" href="https://arxiv.org/pdf/1804.08784.pdf"><img src="./images/NeVIII_OVI_2d.png" alt="Norway" style="width:380px;height:380px"></a>
+          <div class="ex3 w3-container w3-center">
+            <p>BB</p>
+            <p>BB</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    
+  <div class="w3-row-padding w3-margin-top w3-cell_middle">
+    <button style="font-size:110%" onclick="click_accord('research3')" class="w3-btn w3-block w3-light-blue w3-left-align">
+      Disk-Halo Interaction</button>
+    <div id="research3", class="w3-hide">
+      <p> </p>
+      <div class="w3-third">
+        <div class="w3-card-4" style="width:380px">
+          <img src="./images/SiIV_disk.png" alt="Norway" style="width:380px;height:380px">
+          <div class="ex3 w3-container w3-center">
+            <p>Coming Soon</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16 w3-opacity w3-hover-opacity-off">
@@ -120,7 +188,17 @@ function toggleFunction() {
         x.className = x.className.replace(" w3-show", "");
     }
 }
+
+function click_accord(id) {
+  var x = document.getElementById(id);
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
 </script>
+
 
 </body>
 </html>
