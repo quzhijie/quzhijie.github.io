@@ -56,7 +56,50 @@ div.ex3{
 
 </style>
 
+<style>
+    /* 基础样式 */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
+    .container {
+        display: flex;
+        align-items: center; /* 垂直居中 */
+        gap: 20px; /* 图片和文字之间的间距 */
+        padding: 20px;
+        margin: 20px;
+    }
+
+    .container img {
+        max-width: 50%; /* 图片最大宽度为容器的一半 */
+        height: auto; /* 保持图片比例 */
+        border-radius: 8px;
+    }
+
+    .container .text {
+        flex: 1; /* 文字部分占据剩余空间 */
+        font-size: 16px;
+        color: #333;
+    }
+
+    /* 手机版样式 */
+    @media (max-width: 960px) {
+        .container {
+            flex-direction: column; /* 手机版上下排布 */
+            text-align: center; /* 文字居中 */
+        }
+
+        .container img {
+            max-width: 100%; /* 图片宽度占满容器 */
+            margin-bottom: 20px; /* 图片和文字之间的间距 */
+        }
+    }
+</style>
+    
+    
 <body>
 
 <!-- Navbar (sit on top) -->
@@ -102,16 +145,15 @@ div.ex3{
 <!-- research items -->
 
 <div style="width: 70%; margin: 0 auto" class="ex1 w3-container w3-center w3-cell-middle" >
-  <h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> The Hot CGM in X-ray and SZ </h3>
-    <div style="overflow: hidden;">
-      <div style="float: left; width: 50%;">
-        <img src="./images/hot_cgm.jpeg" alt="图片" style="width: 100%; height: auto;">
-      </div>
-      <div style="float: left; width: 50%; padding: 20px;">
-        <p style="text-align: justify; color: black;">During galaxy formation and evolution, the gravitational energy released by the collapse of dark matter halos and the energy injected by feedback processes can significantly heat the CGM. (1) X-rays can be used to observe the hot gas in nearby galaxies. However, due to the limitations of current instruments, there is still considerable uncertainty in current research. The <a href="https://hubs.phys.tsinghua.edu.cn/en/index.html" target="_blank" style="color: #007BFF; text-decoration: none;">HUBS</a> mission will greatly enhance X-ray observation capabilities. (2) The Sunyaev-Zel'dovich (SZ) effect, caused by the inverse Compton scattering of hot electrons on the Cosmic Microwave Background (CMB), can also be used to detect hot gas, complementing X-ray observations.</p>
-        <p style="text-align: justify; color: gray;">Upper panel: eROSITA all-sky X-ray map</p>
-        <p style="text-align: justify; color: gray;">Lower panel: Milky Way OVII emission map in XMM-Newton (<a href="https://ui.adsabs.harvard.edu/abs/2024ApJS..271...62P/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Pan, Qu et al. 2024, X-LEAP I</a>) </p>
-      </div>
+<h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> The Hot CGM in X-ray and SZ </h3>
+</div>
+
+<div class="container" style="width: 70%; margin: 0 auto">
+    <img src="./images/hot_cgm.jpeg" alt="图片" style="width: 100%; height: auto;">
+    <div class="text">
+    <p style="text-align: justify; color: black;">During galaxy formation and evolution, the gravitational energy released by the collapse of dark matter halos and the energy injected by feedback processes can significantly heat the CGM. (1) X-rays can be used to observe the hot gas in nearby galaxies. However, due to the limitations of current instruments, there is still considerable uncertainty in current research. The <a href="https://hubs.phys.tsinghua.edu.cn/en/index.html" target="_blank" style="color: #007BFF; text-decoration: none;">HUBS</a> mission will greatly enhance X-ray observation capabilities. (2) The Sunyaev-Zel'dovich (SZ) effect, caused by the inverse Compton scattering of hot electrons on the Cosmic Microwave Background (CMB), can also be used to detect hot gas, complementing X-ray observations.</p>
+            <p style="text-align: justify; color: gray;">Upper panel: eROSITA all-sky X-ray map</p>
+            <p style="text-align: justify; color: gray;">Lower panel: Milky Way OVII emission map in XMM-Newton (<a href="https://ui.adsabs.harvard.edu/abs/2024ApJS..271...62P/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Pan, Qu et al. 2024, X-LEAP I</a>) </p>
     </div>
 </div>
     
@@ -127,21 +169,18 @@ The discovery of the hot bridge connecting the MW and M31 in the Local Group usi
         <li style="margin-bottom: 10px; color: black; line-height: 1.6;">
 Resolving the SZ signal in the hot halo of nearby L* galaxies and low-mass galaxy groups (<a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...928...14B/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Bregman, Hodges-Kluck, Qu et al. 2022</a>; <a href="https://ui.adsabs.harvard.edu/abs/2021ApJ...920..104P/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Pratt, Qu et al. 2021</a>; <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...964..122P/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">2024</a>).</li>
 </div>
-    
-        
+
 <div style="width: 70%; margin: 0 auto" class="ex1 w3-container w3-center w3-cell-middle" >
-  <h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> The Cool and Warm CGM Probed in Absorption and Emission </h3>
-    <div style="overflow: hidden;">
-      <div style="float: left; width: 50%;">
-        <img src="./images/cool_cgm.png" alt="图片" style="width: 100%; height: auto;">
-      </div>
-      <div style="float: left; width: 50%; padding: 20px;">
-        <p style="text-align: justify; color: black;"> The cool gas, characterized by its higher density, could be accreted onto galaxies and is physically correlated to star formation. The cool gas could be directly accreted from intergalactic medium, condensed from the hot CGM, or ejected from central galaxies. (1) UV/optical high-resolution absorption spectroscopy provides the currently most sensitive tool to measure the cool CGM out to the virial radius (also see <a href="https://hsiaowen-chen.squarespace.com/" target="_blank" style="color: #007BFF; text-decoration: none;">CUBS</a>). (2) Integral field spectrographs can obtain the spatial distribution and velocity fields of the cool gas. (3) Radio HI 21cm emission line observations probe the densest cool gas in the CGM with the most sensitive telescope <a href="https://fast.bao.ac.cn/" target="_blank" style="color: #007BFF; text-decoration: none;">FAST</a> (see <a href="https://github.com/FEASTS/LVgal/wiki/" target="_blank" style="color: #007BFF; text-decoration: none;">FEASTS</a>). </p>
-         <p style="text-align: justify; color: gray;">Right panel: the cool gas in the M81/M82 group (<a href="https://ui.adsabs.harvard.edu/abs/2024arXiv241210579C/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Chen & Zahedy 2025</a>) . </p>
-      </div>
-    </div>
+<h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> The Cool and Warm CGM Probed in Absorption and Emission </h3>
 </div>
 
+<div class="container" style="width: 70%; margin: 0 auto">
+    <img src="./images/cool_cgm.png" alt="图片" style="width: 100%; height: auto;">
+    <div class="text">
+      <p style="text-align: justify; color: black;"> The cool gas, characterized by its higher density, could be accreted onto galaxies and is physically correlated to star formation. The cool gas could be directly accreted from intergalactic medium, condensed from the hot CGM, or ejected from central galaxies. (1) UV/optical high-resolution absorption spectroscopy provides the currently most sensitive tool to measure the cool CGM out to the virial radius (also see <a href="https://hsiaowen-chen.squarespace.com/" target="_blank" style="color: #007BFF; text-decoration: none;">CUBS</a>). (2) Integral field spectrographs can obtain the spatial distribution and velocity fields of the cool gas. (3) Radio HI 21cm emission line observations probe the densest cool gas in the CGM with the most sensitive telescope <a href="https://fast.bao.ac.cn/" target="_blank" style="color: #007BFF; text-decoration: none;">FAST</a> (see <a href="https://github.com/FEASTS/LVgal/wiki/" target="_blank" style="color: #007BFF; text-decoration: none;">FEASTS</a>). </p>
+         <p style="text-align: justify; color: gray;">Right panel: the cool gas in the M81/M82 group (<a href="https://ui.adsabs.harvard.edu/abs/2024arXiv241210579C/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Chen & Zahedy 2025</a>) . </p>
+    </div>
+</div>
 
 <div style="width: 70%; padding: 20px; margin: 0 auto;">
     <h2 style="text-align: left; font-size: 17px; color: black; margin-bottom: 20px;">Relevant Works:</h2>
@@ -152,17 +191,17 @@ Resolving the SZ signal in the hot halo of nearby L* galaxies and low-mass galax
         <li style="margin-bottom: 10px; color: black; line-height: 1.6;"> The Quasars to Understand Environments around, and STar formation (PIs: Ava Polzin, Zhijie Qu, and Erin Boettcher): connecting the cool and warm gas in the circumgalactic space with star formation in low-redshift dwarfs (<a href="" target="_blank" style="color: #007BFF; text-decoration: none;">Polvin et al. in prep.</a>; also see <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...927..228Q/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Qu et al. 2022b</a>). </li>
 </div>
     
+
 <div style="width: 70%; margin: 0 auto" class="ex1 w3-container w3-center w3-cell-middle" >
-  <h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> The Thermodynamics in the CGM </h3>
-    <div style="overflow: hidden;">
-      <div style="float: left; width: 50%;">
-        <img src="./images/cgm_thermo.jpeg" alt="图片" style="width: 100%; height: auto;">
-      </div>
-      <div style="float: left; width: 50%; padding: 20px;">
+<h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> The Thermodynamics in the CGM</h3>
+</div>
+
+<div class="container" style="width: 70%; margin: 0 auto">
+    <img src="./images/cgm_thermo.jpeg" alt="图片" style="width: 100%; height: auto;">
+    <div class="text">
         <p style="text-align: justify; color: black;"> The thermodynamics in the CGM determine the ultimate fate of the gas -- whether it will be accreted, ejected beyond the halo, or remain stably within the halo. In particular, non-thermal processes, including magnetic fields, cosmic rays, turbulence, and inflows/outflows, could play significant roles in relevant processes. (1) Absorption spectroscopy can provide strong constraints on gas density, temperature, and non-thermal broadening. (2) The velocity fields observed by integral field spectrographs also offer strong constraints on non-thermal motions within the CGM.
 </p>
          <p style="text-align: justify; color: gray;"> Right panel: the cool gas in the M81/M82 group (<a href="" target="_blank" style="color: #007BFF; text-decoration: none;">Lin, Wang et al. 2025</a>) . </p>
-      </div>
     </div>
 </div>
 
@@ -174,23 +213,20 @@ Resolving the SZ signal in the hot halo of nearby L* galaxies and low-mass galax
         <li style="margin-bottom: 10px; color: black; line-height: 1.6;"> Constraining the turbulence field using the velocity structure functions for QSO nebulae (<a href="https://ui.adsabs.harvard.edu/abs/2023MNRAS.518.2354C/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Chen et al. 2023</a>; <a href="https://ui.adsabs.harvard.edu/abs/2024ApJ...962...98C/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">2024</a>). </li>
         <li style="margin-bottom: 10px; color: black; line-height: 1.6;"> Resolving the velocity field in the warm gas interface between ISM and CGM in the MW (<a href="https://ui.adsabs.harvard.edu/abs/2019ApJ...880...89Q/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Qu et al.  2019</a>; <a href="https://ui.adsabs.harvard.edu/abs/2020ApJ...894..142Q/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">2020</a>; <a href="https://ui.adsabs.harvard.edu/abs/2022ApJ...924...86Q/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">2022c</a>). </li>
 </div>
-    
 
-    
 <div style="width: 70%; margin: 0 auto" class="ex1 w3-container w3-center w3-cell-middle" >
-  <h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> Modeling the multiphase CGM </h3>
-    <div style="overflow: hidden;">
-      <div style="float: left; width: 50%;">
-        <img src="./images/modeling.png" alt="图片" style="width: 100%; height: auto;">
-      </div>
-      <div style="float: left; width: 50%; padding: 20px;">
+<h3 class="w3-leftbar w3-border-light-blue w3-light-blue w3-text-white"> Modeling the multiphase CGM</h3>
+</div>
+
+<div class="container" style="width: 70%; margin: 0 auto">
+    <img src="./images/modeling.png" alt="图片" style="width: 100%; height: auto;">
+    <div class="text">
         <p style="text-align: justify; color: black;"> Understanding the multiphase CGM requires the development of models and simulations. These models can be categorized into several types: establishing the connection between CGM and galaxy properties, constraining physical properties from observations, and building associations between different phases of gas.
 </p>
          <p style="text-align: justify; color: gray;"> Right panel: an illustration of the multiphase CGM (<a href="https://ui.adsabs.harvard.edu/abs/2024arXiv241210579C/abstract" target="_blank" style="color: #007BFF; text-decoration: none;">Chen & Zahedy 2025</a>) . </p>
-      </div>
     </div>
 </div>
-
+    
 
 <div style="width: 70%; padding: 20px; margin: 0 auto;">
     <h2 style="text-align: left; font-size: 17px; color: black; margin-bottom: 20px;">Relevant Works:</h2>
