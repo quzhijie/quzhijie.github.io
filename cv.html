@@ -7,44 +7,13 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./css/style.css">
 <style>
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
-  height: 100%;
-  color: #777;
-  line-height: 1.8;
-}
-
-/* Create a Parallax Effect */
-.bgimg-1{
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-    
-/* First image (Logo. Full height) */
-.bgimg-1 {
-  background-image: url('./images/GC.jpg');
-  min-height: 250px;
-}
-
-div.ex1 {
-  max-width:600px;
-  margin: auto;
-}
-
-
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
-
-/* Turn off parallax scrolling for tablets and phones */
-@media only screen and (max-device-width: 1600px) {
-  .bgimg-1, .bgimg-2, .bgimg-3{
-    background-attachment: scroll;
+  /* Page-specific: hero image */
+  .bgimg-1 {
+    background-image: url('./images/GC.jpg');
     min-height: 250px;
   }
-}
 </style>
 
 <body>
@@ -52,13 +21,9 @@ div.ex1 {
 <!-- Navbar (sit on top) -->
 <div class="w3-top">
   <div class="w3-bar" id="myNavbar">
-    <a class="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
-      <i class="fa fa-bars"></i>
-    </a>
     <a href="./index.html" class="w3-bar-item w3-button w3-hide-small w3-white"> HOME </a>
-    <a href="#home" class="w3-bar-item w3-button w3-black"><i class="fa fa-user"></i> VITAE</a>
+    <a href="#home" class="w3-bar-item w3-button w3-black" onclick="toggleFunction()"><i class="fa fa-user"></i> VITAE &#9660;</a>
     <a href="./research.html" class="w3-bar-item w3-button w3-hide-small w3-white"><i class="fa fa-search"></i>RESEARCH</a>
-    <a href="./pubs.html" class="w3-bar-item w3-button w3-hide-small w3-white"><i class="fa fa-th"></i> PUBLICATIONS</a>
     <a href="./contact.html" class="w3-bar-item w3-button w3-hide-small w3-white"><i class="fa fa-envelope"></i> CONTACT</a>
   </div>
 
@@ -67,64 +32,74 @@ div.ex1 {
     <a href="./index.html" class="w3-bar-item w3-button" onclick="toggleFunction()">HOME</a>
     <a href="#home" class="w3-bar-item w3-button" onclick="toggleFunction()">VITAE</a>
     <a href="./research.html" class="w3-bar-item w3-button" onclick="toggleFunction()">RESEARCH</a>
-    <a href="./pubs.html" class="w3-bar-item w3-button" onclick="toggleFunction()">PUBLICATIONS</a>
     <a href="./contact.html" class="w3-bar-item w3-button" onclick="toggleFunction()">CONTACT</a>
   </div>
 </div>
 
-<!-- First Parallax Image with Logo Text -->
+<!-- First Parallax Image -->
 <div class="bgimg-1 w3-display-container w3-opacity-min" id="home">
 </div>
 
 <!-- Container (About Section) -->
 <div class="w3-container w3-center">
-    <h1 class="w3-text-deep-orange"> ZHIJIE QU (屈稚杰)</h1>
-    <a class="shield-a">
-      <img  src="https://img.shields.io/badge/update-Sep. 2025-red.svg">
-    </a>
-    <a class="shield-a" target="_blank" href="./files/cv.pdf">
-      <img  src="https://img.shields.io/badge/full version-PDF-lightgrey.svg">
-    </a>
+  <h1 class="w3-text-deep-orange"> ZHIJIE QU (屈稚杰)</h1>
+  <a class="shield-a">
+    <img src="https://img.shields.io/badge/update-Sep. 2025-red.svg">
+  </a>
+  <a class="shield-a" target="_blank" href="./files/cv.pdf">
+    <img src="https://img.shields.io/badge/full version-PDF-lightgrey.svg">
+  </a>
 </div>
-<!-- CV -->
 
+<!-- CV -->
 <div class="ex1 w3-container w3-center w3-cell-middle">
   <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">EMPLOYMENT </h3>
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> Assistant Professor </p>
-    <p align="right"> Tsinghua University, 2025- </p>
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> KICP Associate Fellow </p>
-    <p align="right"> University of Chicago, 2021-2025 </p>
-</div>
-    
-    
-<div class="ex1 w3-container w3-center w3-cell-middle">
-  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">EDUCATION </h3>
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> Ph.D. in Astrophysics </p>
-    <p align="right"> University of Michigan, 2015-2021 </p>
-    <p align="left", style="color:black", class=" w3-panel w3-leftbar w3-border-deep-orange"> B.S. in Astronomy (Graduate with Honors) </p>
-      <p align="right"> Peking University, 2011-2015 </p> 
-</div>
-<div class="ex1 w3-container w3-center w3-cell-middle">
-  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">SELECTED AWARDS</h3>
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2021 -- The IAU PhD Prize (Galaxies and Cosmology), IAU </p>
-    
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2021 -- The ProQuest Distinguished Dissertation Awards, The University of Michigan </p>
-    
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2020 -- Rackham Dissertation Fellowship, the University of Michigan </p>
-    
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2015 -- Weiming Physics Scholarship, School of Physics, Peking University </p>
-    
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2015 -- Xingcheng Undergrad Research Forum, First Prize, Peking University </p>
-    
-    <p align="left", style="color:black", class="w3-panel w3-leftbar w3-border-deep-orange"> 2014 -- NAOC Scholarship, National Astronomical Observatories, CAS </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Assistant Professor </p>
+  <p align="right"> Tsinghua University, 2025- </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> KICP Associate Fellow </p>
+  <p align="right"> University of Chicago, 2021-2025 </p>
 </div>
 
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">EDUCATION </h3>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Ph.D. in Astrophysics </p>
+  <p align="right"> University of Michigan, 2015-2021 </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> B.S. in Astronomy (Graduate with Honors) </p>
+  <p align="right"> Peking University, 2011-2015 </p>
+</div>
+
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">SELECTED AWARDS</h3>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2021 -- The IAU PhD Prize (Galaxies and Cosmology), IAU </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2021 -- The ProQuest Distinguished Dissertation Awards, The University of Michigan </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2020 -- Rackham Dissertation Fellowship, the University of Michigan </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2015 -- Weiming Physics Scholarship, School of Physics, Peking University </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2015 -- Xingcheng Undergrad Research Forum, First Prize, Peking University </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2014 -- NAOC Scholarship, National Astronomical Observatories, CAS </p>
+</div>
+
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">TEACHING </h3>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2026 Spring, THU, instructor -- Advanced Observational Astrophysics </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> 2025 Fall, THU, instructor (with Chris Ormel) -- Special Topics in Theoretical Astrophysics </p>
+</div>
+
+<div class="ex1 w3-container w3-center w3-cell-middle">
+  <h3 class="w3-leftbar w3-border-deep-orange w3-deep-orange">RESEARCH ADVISING </h3>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Wenhao Wang (XMU → THU), 2025–present </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Yuqian Gui (THU), Co-advised w/ Dandan Xu, 2025–present </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Yuanzhen Han (PMO), Co-advised w/ Shuinai Zhang & Li Ji, 2025–present </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Zeyang Pan (UCAS), Co-advised w/ Joel Bregman & Jifeng Liu, 2021–present </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Junle Wang (BNU), 2025–present </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Jinglun Dai (THU), 2025–present </p>
+  <p align="left" style="color:black" class="w3-panel w3-leftbar w3-border-deep-orange"> Eliana Schiller (UChicago), Co-advised w/ Hsiao-Wen Chen, 2024–present </p>
+</div>
 
 <!-- Footer -->
 <footer class="w3-center w3-black w3-padding-16 w3-opacity w3-hover-opacity-off">
   <p style="font-family: 'Crimson Text', serif; text-transform: capitalize"> Zhijie Qu | Tsinghua University</p>
 </footer>
- 
+
 <script>
 // Modal Image Gallery
 function onClick(element) {
@@ -137,26 +112,24 @@ function onClick(element) {
 // Change style of navbar on scroll
 window.onscroll = function() {myFunction()};
 function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
+  var navbar = document.getElementById("myNavbar");
+  if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+    navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
+  } else {
+    navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
+  }
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function toggleFunction() {
-    var x = document.getElementById("navDemo");
-    if (x.className.indexOf("w3-show") == -1) {
-        x.className += " w3-show";
-    } else {
-        x.className = x.className.replace(" w3-show", "");
-    }
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+  }
 }
 </script>
 
 </body>
 </html>
-
-

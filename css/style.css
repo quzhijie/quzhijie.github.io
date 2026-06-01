@@ -1,0 +1,81 @@
+/* ============================================================
+   Shared styles for Zhijie Qu's Homepage
+   ============================================================ */
+
+/* --- Base Typography & Layout --- */
+body, h1, h2, h3, h4, h5, h6 {
+  font-family: "Lato", sans-serif;
+}
+body, html {
+  height: 100%;
+  color: #777;
+  line-height: 1.8;
+}
+
+/* --- Hero Image (default: scroll) --- */
+.bgimg-1 {
+  background-attachment: scroll;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.w3-wide { letter-spacing: 10px; }
+.w3-hover-opacity { cursor: pointer; }
+
+/* Disable parallax on tablets/phones */
+@media only screen and (max-device-width: 1600px) {
+  .bgimg-1 {
+    background-attachment: scroll;
+  }
+}
+
+/* --- Dark Mode (unified across all pages) --- */
+@media (prefers-color-scheme: dark) {
+  body { background: #121212; }
+  body, p, h1, h2, h3, h4, h5, h6, li, span, div { color: #c0c0c0 !important; }
+  a { color: #5ba3ec !important; }
+
+  .w3-bar-item.w3-white  { background: #2a2a2a !important; }
+  .w3-bar.w3-card         { background: #1e1e1e !important; }
+  .w3-bar-item.w3-black  { background: #222 !important; }
+  footer.w3-black         { background: #111 !important; }
+  .w3-bar-item.w3-button  { color: #c0c0c0 !important; }
+  .w3-text-white          { color: #c0c0c0 !important; }
+
+  /* Override inline color styles */
+  [style*="color:black"],
+  [style*="color: black"],
+  [style*="color:#333"],
+  [style*="color: #333"],
+  [style*="color:#777"],
+  [style*="color: #777"] {
+    color: #c0c0c0 !important;
+  }
+
+  /* Theme accent overrides — used by cv.html */
+  .w3-text-deep-orange  { color: #c0c0c0 !important; }
+  .w3-deep-orange       { background-color: #886655 !important; color: #c0c0c0 !important; }
+
+  /* Theme accent overrides — used by research.html */
+  .w3-text-light-blue   { color: #c0c0c0 !important; }
+  .w3-light-blue        { background-color: #556677 !important; color: #c0c0c0 !important; }
+}
+
+/* --- Reusable utility classes --- */
+.ex1 {
+  max-width: 600px;
+  margin: auto;
+}
+
+.ex2 {
+  max-width: 1000px;
+  min-height: calc(100vh - 360px);
+  margin: auto;
+}
+
+.ex3 {
+  width: 350px;
+  min-height: 200px;
+  margin: auto;
+}
