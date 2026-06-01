@@ -2,6 +2,8 @@
    Shared styles for Zhijie Qu's Homepage
    ============================================================ */
 
+:root { color-scheme: light dark; }
+
 /* --- Base Typography & Layout --- */
 body, h1, h2, h3, h4, h5, h6 {
   font-family: "Lato", sans-serif;
