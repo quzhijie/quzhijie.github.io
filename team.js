@@ -6,23 +6,23 @@ const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'
 const TEAM={
  pi:[{name:'Zhijie Qu',photo:'qu',links:true,zh:'屈稚杰',role:['Assistant Professor','助理教授'],where:['Department of Astronomy, Tsinghua University','清华大学天文系'],years:'2025–',noPapers:true,
   topic:['Research interests: the multiphase gas around galaxies — how much of it there is, how it moves, and what it tells us about feedback and accretion. Zhijie was previously a KICP Associate Fellow at the University of Chicago, and received a Ph.D. from the University of Michigan and a B.S. from Peking University.','研究兴趣：星系周围的多相气体——有多少、如何运动，以及它如何揭示反馈与吸积。屈稚杰此前是芝加哥大学 KICP Associate Fellow，博士毕业于密歇根大学，本科毕业于北京大学。']}],
- postdoc:[{name:'He Lin',zh:'何琳',role:['Shuimu Fellow','水木学者'],where:['NJU → THU','南京大学 → 清华大学'],years:'2026–',topic:['Galaxy kinematics from stacked MUSE cubes of the Cosmic Ultraviolet Baryon Survey (CUBS): following [O II] emission and its rotation from the disk out into the halo.','叠加宇宙紫外重子巡天（CUBS）的 MUSE 数据立方研究星系运动学：追踪 [O II] 发射及其旋转从星系盘延伸到气体晕。']}],
+ postdoc:[{name:'He Lin',zh:'何琳',role:['Shuimu Fellow','水木学者'],where:['NJU → THU','南京大学 → 清华大学'],years:'2026–',topic:['He Lin studies galaxy kinematics in stacked MUSE cubes of the Cosmic Ultraviolet Baryon Survey (CUBS), following [O II] emission and its rotation from the disk out into the halo.','何琳利用叠加的宇宙紫外重子巡天（CUBS）MUSE 数据立方研究星系运动学，追踪 [O II] 发射及其旋转从星系盘延伸到气体晕。']}],
  grad:[
-  {name:'Zeyang Pan',zh:'潘泽阳',where:['UCAS','中国科学院大学'],years:'2021–',with:'Joel Bregman & Jifeng Liu',topic:['X-ray line emission of the Milky Way’s hot gas and of solar-wind charge exchange (X-LEAP).','银河系热气体与太阳风电荷交换的 X 射线谱线发射（X-LEAP）。']},
-  {name:'Wenhao Wang',photo:'wenhao',zh:'王文豪',where:['XMU → THU','厦门大学 → 清华大学'],years:'2025–',topic:['Baryon cycling in highly inclined dwarf galaxies.','高倾角矮星系中的重子循环。']},
-  {name:'Yuqian Gui',photo:'yuqian',zh:'桂雨谦',where:['THU','清华大学'],years:'2025–',with:'Dandan Xu',home:'https://yq-gui.github.io/',topic:['Kinematics of the circumgalactic medium around M31 from HST/COS absorption toward background quasars.','利用背景类星体的 HST/COS 吸收线研究 M31 星系周介质的运动学。']},
-  {name:'Junle Wang',photo:'junle',zh:'王均乐',where:['BNU → THU','北京师范大学 → 清华大学'],years:'2025–',topic:['Mapping the Milky Way’s hot gas with the Einstein Probe Wide-field X-ray Telescope (WXT).','利用爱因斯坦探针宽视场 X 射线望远镜（WXT）绘制银河系热气体。']},
-  {name:'Yuanzhen Han',zh:'韩园珍',where:['PMO','紫金山天文台'],years:'2025–',with:'Shuinai Zhang & Li Ji',topic:['Small-scale models of circumgalactic absorbers, comparing the covering fraction with the number of absorption components.','星系周吸收体的小尺度建模：比较覆盖率与吸收成分的数目。']}
+  {name:'Zeyang Pan',zh:'潘泽阳',where:['UCAS','中国科学院大学'],years:'2021–',with:'Joel Bregman & Jifeng Liu',topic:['Zeyang Pan studies the X-ray line emission of the Milky Way’s hot gas and of solar-wind charge exchange (X-LEAP).','潘泽阳研究银河系热气体与太阳风电荷交换的 X 射线谱线发射（X-LEAP）。']},
+  {name:'Wenhao Wang',photo:'wenhao',zh:'王文豪',where:['XMU → THU','厦门大学 → 清华大学'],years:'2025–',topic:['Wenhao Wang studies baryon cycling in highly inclined dwarf galaxies.','王文豪研究高倾角矮星系中的重子循环。']},
+  {name:'Yuqian Gui',photo:'yuqian',zh:'桂雨谦',where:['THU','清华大学'],years:'2025–',with:'Dandan Xu',home:'https://yq-gui.github.io/',topic:['Yuqian Gui studies the kinematics of the circumgalactic medium around M31, using HST/COS absorption toward background quasars.','桂雨谦利用背景类星体的 HST/COS 吸收线研究 M31 星系周介质的运动学。']},
+  {name:'Junle Wang',photo:'junle',zh:'王均乐',where:['BNU → THU','北京师范大学 → 清华大学'],years:'2025–',topic:['Junle Wang maps the Milky Way’s hot gas with the Einstein Probe Wide-field X-ray Telescope (WXT).','王均乐利用爱因斯坦探针宽视场 X 射线望远镜（WXT）绘制银河系热气体的分布。']},
+  {name:'Yuanzhen Han',zh:'韩园珍',where:['PMO','紫金山天文台'],years:'2025–',with:'Shuinai Zhang & Li Ji',topic:['Yuanzhen Han builds small-scale models of circumgalactic absorbers, comparing the covering fraction with the number of absorption components.','韩园珍为星系周吸收体建立小尺度模型，比较覆盖率与吸收成分的数目。']}
  ],
  undergrad:[
-  {name:'Eliana Schiller',where:['UChicago','芝加哥大学'],years:'2024–',with:'Hsiao-Wen Chen',topic:['Kinematics of H I and O VI absorbers in the circumgalactic medium.','星系周介质中 H I 与 O VI 吸收体的运动学。']},
+  {name:'Eliana Schiller',where:['UChicago','芝加哥大学'],years:'2024–',with:'Hsiao-Wen Chen',topic:['Eliana Schiller studies the kinematics of H I and O VI absorbers in the circumgalactic medium.','Eliana Schiller 研究星系周介质中 H I 与 O VI 吸收体的运动学。']},
   {name:'Jinglun Dai',zh:'代靖伦',where:['THU','清华大学'],years:'2025–'}
  ],
  alumni:[
-  {name:'Hang Yang',now:['Now in industry','现在业界工作'],zh:'杨航',role:['PhD student','博士生'],where:['PMO','紫金山天文台'],years:'2019–2025',with:'Joel Bregman & Li Ji',topic:['Modelling cool gas clumps in the circumgalactic medium.','星系周介质中冷气体团块的建模。']},
-  {name:'Suyash Kumar',role:['PhD student','博士生'],where:['UChicago','芝加哥大学'],years:'2022–2025',with:'Hsiao-Wen Chen',topic:['The physical nature of C IV-bearing gas around galaxies.','星系周围含 C IV 气体的物理性质。']},
-  {name:'Cameron Pratt',now:['Now in industry','现在业界工作'],role:['PhD student','博士生'],where:['UMich','密歇根大学'],years:'2020–2024',with:'Joel N. Bregman',topic:['Sunyaev–Zeldovich measurements of hot halos, including machine-learning extraction.','热气体晕的 Sunyaev–Zeldovich 测量，包括机器学习信号提取。']},
-  {name:'Ryan Lindley',now:['Now in industry','现在业界工作'],role:['Undergraduate','本科生'],where:['UMich','密歇根大学'],years:'2019–2021',topic:['Kinematics of the Milky Way’s warm gas.','银河系暖气体的运动学。']}
+  {name:'Hang Yang',now:['Now in industry','现在业界工作'],zh:'杨航',role:['PhD student','博士生'],where:['PMO','紫金山天文台'],years:'2019–2025',with:'Joel Bregman & Li Ji',topic:['Hang Yang modelled cool gas clumps in the circumgalactic medium.','杨航曾为星系周介质中的冷气体团块建立模型。']},
+  {name:'Suyash Kumar',role:['PhD student','博士生'],where:['UChicago','芝加哥大学'],years:'2022–2025',with:'Hsiao-Wen Chen',topic:['Suyash Kumar studied the physical nature of C IV-bearing gas around galaxies.','Suyash Kumar 曾研究星系周围含 C IV 气体的物理性质。']},
+  {name:'Cameron Pratt',now:['Now in industry','现在业界工作'],role:['PhD student','博士生'],where:['UMich','密歇根大学'],years:'2020–2024',with:'Joel N. Bregman',topic:['Cameron Pratt measured hot halos through the Sunyaev–Zeldovich effect, including machine-learning extraction of the signal.','Cameron Pratt 曾通过 Sunyaev–Zeldovich 效应测量热气体晕，包括用机器学习提取信号。']},
+  {name:'Ryan Lindley',now:['Now in industry','现在业界工作'],role:['Undergraduate','本科生'],where:['UMich','密歇根大学'],years:'2019–2021',topic:['Ryan Lindley studied the kinematics of the Milky Way’s warm gas.','Ryan Lindley 曾研究银河系暖气体的运动学。']}
  ]
 };
 // Links carry only non-default state (Chinese, or a chosen theme).
