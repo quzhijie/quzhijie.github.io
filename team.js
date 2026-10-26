@@ -5,7 +5,7 @@ let lang=new URLSearchParams(location.search).get('lang')==='zh'?'zh':'en';
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const TEAM={
  pi:[{name:'Zhijie Qu',photo:'qu',links:true,zh:'屈稚杰',role:['Assistant Professor','助理教授'],where:['Department of Astronomy, Tsinghua University','清华大学天文系'],years:'2025–',noPapers:true,
-  topic:['The multiphase gas around galaxies — how much of it there is, how it moves, and what it tells us about feedback and accretion. Previously KICP Associate Fellow at the University of Chicago; Ph.D., University of Michigan; B.S., Peking University.','星系周围的多相气体——有多少、如何运动，以及它如何揭示反馈与吸积。此前为芝加哥大学 KICP Associate Fellow；博士毕业于密歇根大学，本科毕业于北京大学。']}],
+  topic:['Research interests: the multiphase gas around galaxies — how much of it there is, how it moves, and what it tells us about feedback and accretion. Zhijie was previously a KICP Associate Fellow at the University of Chicago, and received a Ph.D. from the University of Michigan and a B.S. from Peking University.','研究兴趣：星系周围的多相气体——有多少、如何运动，以及它如何揭示反馈与吸积。屈稚杰此前是芝加哥大学 KICP Associate Fellow，博士毕业于密歇根大学，本科毕业于北京大学。']}],
  postdoc:[{name:'He Lin',zh:'何琳',role:['Shuimu Fellow','水木学者'],where:['NJU → THU','南京大学 → 清华大学'],years:'2026–',topic:['Galaxy kinematics from stacked MUSE cubes of the Cosmic Ultraviolet Baryon Survey (CUBS): following [O II] emission and its rotation from the disk out into the halo.','叠加宇宙紫外重子巡天（CUBS）的 MUSE 数据立方研究星系运动学：追踪 [O II] 发射及其旋转从星系盘延伸到气体晕。']}],
  grad:[
   {name:'Zeyang Pan',zh:'潘泽阳',where:['UCAS','中国科学院大学'],years:'2021–',with:'Joel Bregman & Jifeng Liu',topic:['X-ray line emission of the Milky Way’s hot gas and of solar-wind charge exchange (X-LEAP).','银河系热气体与太阳风电荷交换的 X 射线谱线发射（X-LEAP）。']},
