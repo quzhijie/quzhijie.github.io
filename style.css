@@ -83,3 +83,6 @@ html:lang(en) .lang-zh,html:lang(zh-CN) .lang-en{display:none}
 .member-now{color:var(--accent)}
 /* Seven section links: on the narrowest phones (320 px) tighten the masthead so they stay on one row. */
 @media(max-width:359px){.masthead nav{gap:5px;font-size:9.5px}.language{padding:4px 5px}}
+/* Teaching: lecture cards with a 16:9 thumbnail of the deck. */
+.cards.courses{grid-template-columns:repeat(2,1fr)}.card-thumb{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:5px;margin-bottom:14px;background:#0c1520}
+@media(max-width:760px){.cards.courses{grid-template-columns:1fr}}
