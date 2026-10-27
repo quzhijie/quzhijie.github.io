@@ -11,7 +11,7 @@ const TEAM={
   {name:'Zeyang Pan',zh:'潘泽阳',where:['UCAS','中国科学院大学'],years:'2021–',with:'Joel Bregman & Jifeng Liu',topic:['Zeyang Pan studies the X-ray line emission of the Milky Way’s hot gas and of solar-wind charge exchange (X-LEAP).','潘泽阳研究银河系热气体与太阳风电荷交换的 X 射线谱线发射（X-LEAP）。']},
   {name:'Wenhao Wang',photo:'wenhao',zh:'王文豪',where:['XMU → THU','厦门大学 → 清华大学'],years:'2025–',topic:['Wenhao Wang studies baryon cycling in highly inclined dwarf galaxies.','王文豪研究高倾角矮星系中的重子循环。']},
   {name:'Yuqian Gui',photo:'yuqian',zh:'桂雨谦',where:['THU','清华大学'],years:'2025–',with:'Dandan Xu',home:'https://yq-gui.github.io/',topic:['Yuqian Gui studies the kinematics of the circumgalactic medium around M31, using HST/COS absorption toward background quasars.','桂雨谦利用背景类星体的 HST/COS 吸收线研究 M31 星系周介质的运动学。']},
-  {name:'Junle Wang',photo:'junle',zh:'王均乐',where:['BNU → THU','北京师范大学 → 清华大学'],years:'2025–',topic:['Junle Wang maps the Milky Way’s hot gas with the Einstein Probe Wide-field X-ray Telescope (WXT).','王均乐利用爱因斯坦探针宽视场 X 射线望远镜（WXT）绘制银河系热气体的分布。']},
+  {name:'Junle Wang',photo:'junle',zh:'王均乐',where:['BNU → THU','北京师范大学 → 清华大学'],years:'2025–',topic:['Junle Wang maps hot gas around nearby galaxies with the Einstein Probe Wide-field X-ray Telescope (WXT).','王均乐利用爱因斯坦探针宽视场 X 射线望远镜（WXT）绘制近邻星系周围的热气体。']},
   {name:'Yuanzhen Han',zh:'韩园珍',where:['PMO','紫金山天文台'],years:'2025–',with:'Shuinai Zhang & Li Ji',topic:['Yuanzhen Han builds small-scale models of circumgalactic absorbers, comparing the covering fraction with the number of absorption components.','韩园珍为星系周吸收体建立小尺度模型，比较覆盖率与吸收成分的数目。']}
  ],
  undergrad:[
