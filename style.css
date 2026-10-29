@@ -86,5 +86,6 @@ html:lang(en) .lang-zh,html:lang(zh-CN) .lang-en{display:none}
 /* Teaching: lecture cards with a 16:9 thumbnail of the deck. */
 .cards.courses{grid-template-columns:repeat(2,1fr)}.card-thumb{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:5px;margin-bottom:14px;background:#0c1520}
 @media(max-width:760px){.cards.courses{grid-template-columns:1fr}}
-/* Home panel: one layout for every scale, node and method; actions sit last. */
-.panel-divider .phase-tags{margin:0}.panel-actions .detail-link+.detail-link{margin-top:8px}.inspector.minimal .panel-actions .detail-link+.detail-link{margin-top:5px}
+/* Home panel: one layout for every scale, node and method; actions sit last; lists always two columns. */
+.region-list{grid-template-columns:1fr 1fr;gap:0 13px}.panel-divider .phase-tags{margin:0}.panel-actions .detail-link+.detail-link{margin-top:8px}.inspector.minimal .panel-actions .detail-link+.detail-link{margin-top:5px}
+.inspector.scrolls #panel-content{overflow-y:auto;scrollbar-width:thin}

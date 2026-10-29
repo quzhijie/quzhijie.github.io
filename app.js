@@ -16,9 +16,15 @@ function paperLink(id){const p=byId[id];if(!p)return '';const a=p.authors.slice(
 // Keep only non-default state in the address, so the default view stays a clean URL.
 function syncURL(){if(location.protocol==='file:')return;const q=new URLSearchParams();if(scale!==1)q.set('scale',String(scale));if(theme!=='all')q.set('theme',theme);if(lang!=='en')q.set('lang',lang);const s=q.toString();history.replaceState(null,'',location.pathname+(s?'?'+s:'')+(selected?'#'+selected:''));}
 function renderPanel(){
- const i=ix(),n=R.nodes.find(n=>n.id===selected),th=R.themes[theme],sc=R.scales[scale],accent=n?n.color:th?th.color:'#8ad2dd';
+ const n=R.nodes.find(n=>n.id===selected),th=R.themes[theme],accent=n?n.color:th?th.color:'#8ad2dd';
  $('#inspector').style.setProperty('--accent',accent);$('#reset').hidden=!n;$('#panel-number').textContent=`0${scale+1} / ${n?(lang==='en'?'FIELD NOTES':'探索笔记'):(lang==='en'?'OVERVIEW':'全景')}`;
- // Every panel has the same shape: kicker, title, text, then divided sections, then the action buttons.
+ $('#all-index-footer').href=`publications.html${lang==='zh'?'?lang=zh':''}`;$('#all-index-footer').textContent=txt('full');
+ $('#panel-content').innerHTML=panelHTML(scale,n);$('#panel-content').scrollTop=0;fitPanel();
+ if(!reduced.matches)$('#panel-content').animate([{opacity:.3},{opacity:1}],{duration:220});
+}
+// Every panel has the same shape: kicker, title, text, then divided sections, then the action buttons.
+function panelHTML(s,n){
+ const i=ix(),th=R.themes[theme],sc=R.scales[s];
  const section=(h,body)=>`<div class="panel-divider"><h3>${h}</h3>${body}</div>`;
  const chips=(tags,link)=>`<div class="phase-tags${link?'':' method-tags'}">${tags.map(t=>link?`<a href="${themeURL(t)}"><span>${esc(R.themes[t].short[i])} ↗</span></a>`:`<span>${esc(R.themes[t].short[i])}</span>`).join('')}</div>`;
  const themeLink=t=>`<a class="detail-link" href="${themeURL(t)}"><span>${txt('detail')}</span><span>↗</span></a>`;
@@ -37,23 +43,34 @@ function renderPanel(){
  }else{
   // Each scale has its own introduction; a chosen theme filters the lists and adds its own link.
   title=sc.headline[i];desc=sc.intro[i];if(th)kicker+=` · ${esc(th.short[i].toUpperCase())}`;
-  const item=n=>`<button data-node="${n.id}"${n.method?' class="method-item"':''}><span>${n.method?'◇ ':''}${esc(n.label[i])}</span><span>↗</span></button>`,objs=currentNodes().filter(n=>!n.method),meths=currentNodes().filter(n=>n.method);
+  const here=R.nodes.filter(n=>n.scale===s&&(theme==='all'||n.tags.includes(theme)));
+  const item=n=>`<button data-node="${n.id}"${n.method?' class="method-item"':''}><span>${n.method?'◇ ':''}${esc(n.label[i])}</span><span>↗</span></button>`,objs=here.filter(n=>!n.method),meths=here.filter(n=>n.method);
   body+=section(txt('explore'),`<div class="region-list">${objs.map(item).join('')}</div>`);
   if(meths.length)body+=section(txt('methods'),`<div class="region-list">${meths.map(item).join('')}</div>`);
   if(th)actions+=themeLink(theme);
   note=`<p class="scale-note">${txt('overviewDesc')}</p>`;
  }
- const html=`<p class="panel-kicker">${kicker}</p><h2>${title}</h2><p class="panel-description">${desc}</p>${body}${actions?`<div class="panel-actions">${actions}</div>`:''}${note}`;
- $('#all-index-footer').href=`publications.html${lang==='zh'?'?lang=zh':''}`;$('#all-index-footer').textContent=txt('full');
- $('#panel-content').innerHTML=html;$('#panel-content').scrollTop=0;fitPanel();
- if(!reduced.matches)$('#panel-content').animate([{opacity:.3},{opacity:1}],{duration:220});
+ return `<p class="panel-kicker">${kicker}</p><h2>${title}</h2><p class="panel-description">${desc}</p>${body}${actions?`<div class="panel-actions">${actions}</div>`:''}${note}`;
 }
 function fitPanel(){
  const panel=$('#inspector'),content=$('#panel-content'),fits=()=>content.scrollHeight<=content.clientHeight+1;
- panel.classList.remove('compact','condensed','minimal');const papers=[...content.querySelectorAll('.paper')];papers.forEach(p=>p.classList.remove('fit-hidden'));
+ panel.classList.remove('compact','condensed','minimal','scrolls');const papers=[...content.querySelectorAll('.paper')];papers.forEach(p=>p.classList.remove('fit-hidden'));
  if(innerWidth<=760)return fitMore(); // phones scroll the page, so the panel shows everything
- // Desktop panel fits one screen: tighten spacing, then show fewer papers (at least one), then shorten the text.
- if(!fits())panel.classList.add('compact');
+ // Desktop panels all use the compact spacing. The four scale overviews share one fit level, set by
+ // whichever needs the most room, so switching scales never changes the layout; they stop at
+ // 'condensed' (minimal would hide the region lists) and scroll if still too tall. A field-notes panel
+ // that still overflows shows fewer papers (at least one), then shortens its text.
+ panel.classList.add('compact');
+ if(!selected){
+  const html=content.innerHTML,modes=['condensed'];let level=0;
+  for(let s=0;s<R.scales.length;s++){
+   content.innerHTML=panelHTML(s,null);modes.slice(0,level).forEach(m=>panel.classList.add(m));
+   while(!fits()&&level<modes.length)panel.classList.add(modes[level++]);
+  }
+  content.innerHTML=html;panel.classList.remove(...modes);modes.slice(0,level).forEach(m=>panel.classList.add(m));
+  panel.classList.toggle('scrolls',!fits());
+  return fitMore();
+ }
  while(!fits()&&papers.length>1)papers.pop().classList.add('fit-hidden');
  for(const mode of ['condensed','minimal']){if(fits())break;panel.classList.add(mode);}
  fitMore();
