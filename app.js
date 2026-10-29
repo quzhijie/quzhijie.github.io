@@ -4,7 +4,7 @@ const byId=Object.fromEntries(P.map(p=>[p.id,p]));
 const params=new URLSearchParams(location.search);
 let lang=params.get('lang')==='zh'?'zh':'en',theme=R.themes[params.get('theme')]?params.get('theme'):'all',scale=params.has('scale')?Math.max(0,Math.min(R.scales.length-1,Number(params.get('scale'))||0)):1,selected=null;
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');let paused=reduced.matches;
-const C={en:{position:'Assistant Professor · Astronomy, Tsinghua University',contact:'Contact ↗',team:'Team','map-title':'The cosmic ecosystem',themes:'RESEARCH THEMES',all:'All themes',pause:'Pause',play:'Resume',schematic:'Conceptual illustration · not observed data · not to scale',back:'← Overview',explore:'EXPLORE THIS SCALE',methods:'OBSERVATIONAL METHODS',method:'OBSERVATIONAL METHOD',instruments:'INSTRUMENTS',usedFor:'USED FOR',related:'SELECTED RELATED WORK',morePapers:'All {n} related papers ↗',detail:'Explore this research theme',full:'All publications · complete CV list ↗',zoom:'Zoom inward →',overview:'Gas, galaxies<br>and everything between.',overviewDesc:'Explore four spatial scales and three research themes. Select a theme to reveal its structures, or select a region for a short introduction and related research.',observables:'Observational windows',published:'Published',preprint:'Preprint',themeHint:'One paper can connect several themes.',review:'Topic assignments and research descriptions are a draft for review.',bubblesSource:'Background: eROSITA discovery ↗',epTitle:'AWARDED PROGRAM · EINSTEIN PROBE',ep:'Cycle 3 · PI. “Deciphering the Outflow and ISM/CGM Interplay toward the Galactic Center.” Observations planned; no new result is implied.'},zh:{position:'清华大学天文系 · 助理教授',contact:'联系 ↗',team:'团队','map-title':'宇宙生态系统',themes:'研究主题',all:'全部主题',pause:'暂停',play:'继续',schematic:'概念示意 · 非观测图像 · 不按真实比例',back:'← 全景',explore:'探索当前尺度',methods:'观测方法',method:'观测方法',instruments:'观测设备',usedFor:'适用主题',related:'相关代表工作',morePapers:'全部 {n} 篇相关论文 ↗',detail:'深入了解这一研究主题',full:'全部论文 · 当前 CV 完整列表 ↗',zoom:'进入下一尺度 →',overview:'气体、星系，<br>和它们之间的宇宙。',overviewDesc:'沿四个空间尺度和三个研究主题探索。选择主题以筛选相关结构，点击区域可查看简介与相关研究。',observables:'观测窗口',published:'已发表',preprint:'预印本',themeHint:'同一篇工作可以关联多个主题。',review:'主题归类与研究介绍为待审核草稿。',bubblesSource:'背景：eROSITA 气泡发现 ↗',epTitle:'已获批项目 · EINSTEIN PROBE',ep:'Cycle 3 · PI。“Deciphering the Outflow and ISM/CGM Interplay toward the Galactic Center”。观测仍在计划中，不表示已获得新的观测结果。'}};
+const C={en:{position:'Assistant Professor · Astronomy, Tsinghua University',contact:'Contact ↗',team:'Team','map-title':'The cosmic ecosystem',themes:'RESEARCH THEMES',all:'All themes',pause:'Pause',play:'Resume',schematic:'Conceptual illustration · not observed data · not to scale',back:'← Overview',explore:'EXPLORE THIS SCALE',methods:'OBSERVATIONAL METHODS',method:'OBSERVATIONAL METHOD',instruments:'INSTRUMENTS',usedFor:'USED FOR',related:'SELECTED RELATED WORK',morePapers:'All {n} related papers ↗',detail:'Explore this research theme',full:'All publications · complete CV list ↗',zoom:'Zoom inward →',overview:'Gas, galaxies<br>and everything between.',overviewDesc:'Explore four spatial scales and three research themes. Select a theme to reveal its structures, or select a region for a short introduction and related research.',observables:'Observational windows',published:'Published',preprint:'Preprint',themeHint:'One paper can connect several themes.',review:'Topic assignments and research descriptions are a draft for review.',bubblesSource:'Background: eROSITA discovery ↗',epTitle:'AWARDED PROGRAM · EINSTEIN PROBE',ep:'Cycle 3 · PI. “Deciphering the Outflow and ISM/CGM Interplay toward the Galactic Center.” Observations are planned.'},zh:{position:'清华大学天文系 · 助理教授',contact:'联系 ↗',team:'团队','map-title':'宇宙生态系统',themes:'研究主题',all:'全部主题',pause:'暂停',play:'继续',schematic:'概念示意 · 非观测图像 · 不按真实比例',back:'← 全景',explore:'探索当前尺度',methods:'观测方法',method:'观测方法',instruments:'观测设备',usedFor:'适用主题',related:'相关代表工作',morePapers:'全部 {n} 篇相关论文 ↗',detail:'深入了解这一研究主题',full:'全部论文 · 当前 CV 完整列表 ↗',zoom:'进入下一尺度 →',overview:'气体、星系，<br>和它们之间的宇宙。',overviewDesc:'沿四个空间尺度和三个研究主题探索。选择主题以筛选相关结构，点击区域可查看简介与相关研究。',observables:'观测窗口',published:'已发表',preprint:'预印本',themeHint:'同一篇工作可以关联多个主题。',review:'主题归类与研究介绍为待审核草稿。',bubblesSource:'背景：eROSITA 气泡发现 ↗',epTitle:'已获批项目 · EINSTEIN PROBE',ep:'Cycle 3 · PI。“Deciphering the Outflow and ISM/CGM Interplay toward the Galactic Center”。观测仍在计划中。'}};
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const ix=()=>lang==='en'?0:1,txt=k=>C[lang][k];
 // The publications page lists every paper attached to a node (?node=id).
@@ -32,7 +32,7 @@ function panelHTML(s,n){
  if(n){
   title=n.title[i];desc=n.description[i];
   if(n.method)kicker+=` · ◇ ${txt('method')}`;
-  if(n.project)body+=`<div class="project-callout"><strong>${txt('epTitle')}</strong>${txt('ep')}</div><a class="all-index" href="https://www.mpe.mpg.de/7540556/news20201210" target="_blank" rel="noopener">${txt('bubblesSource')}</a>`;
+  if(n.project)body+=`<div class="project-callout"><strong>${txt('epTitle')}</strong>${txt('ep')} <a href="https://www.mpe.mpg.de/7540556/news20201210" target="_blank" rel="noopener">${txt('bubblesSource')}</a></div>`;
   if(n.instruments)body+=section(txt('instruments'),`<p class="method-instruments">${esc(n.instruments[i])}</p>`);
   // Methods explain a technique, so their themes are plain labels rather than links to theme pages.
   body+=section(txt('themes'),chips(n.method||theme==='all'?n.tags:[theme],!n.method));
@@ -54,25 +54,19 @@ function panelHTML(s,n){
 }
 function fitPanel(){
  const panel=$('#inspector'),content=$('#panel-content'),fits=()=>content.scrollHeight<=content.clientHeight+1;
- panel.classList.remove('compact','condensed','minimal','scrolls');const papers=[...content.querySelectorAll('.paper')];papers.forEach(p=>p.classList.remove('fit-hidden'));
+ panel.classList.remove('compact','condensed','minimal','scrolls');content.querySelectorAll('.paper').forEach(p=>p.classList.remove('fit-hidden'));
  if(innerWidth<=760)return fitMore(); // phones scroll the page, so the panel shows everything
- // Desktop panels all use the compact spacing. The four scale overviews share one fit level, set by
- // whichever needs the most room, so switching scales never changes the layout; they stop at
- // 'condensed' (minimal would hide the region lists) and scroll if still too tall. A field-notes panel
- // that still overflows shows fewer papers (at least one), then shortens its text.
+ // Desktop panels all use the compact spacing. Panels of one kind share a fit level: the four scale
+ // overviews together, and all field notes together (every region and method under the current theme),
+ // set by whichever needs the most room, so moving between them never changes the layout. The level
+ // stops at 'condensed' ('minimal' would hide the lists and sections); field notes first show fewer
+ // papers (at least one), and a panel that is still too tall scrolls.
  panel.classList.add('compact');
- if(!selected){
-  const html=content.innerHTML,modes=['condensed'];let level=0;
-  for(let s=0;s<R.scales.length;s++){
-   content.innerHTML=panelHTML(s,null);modes.slice(0,level).forEach(m=>panel.classList.add(m));
-   while(!fits()&&level<modes.length)panel.classList.add(modes[level++]);
-  }
-  content.innerHTML=html;panel.classList.remove(...modes);modes.slice(0,level).forEach(m=>panel.classList.add(m));
-  panel.classList.toggle('scrolls',!fits());
-  return fitMore();
- }
- while(!fits()&&papers.length>1)papers.pop().classList.add('fit-hidden');
- for(const mode of ['condensed','minimal']){if(fits())break;panel.classList.add(mode);}
+ const hidePapers=()=>{const ps=[...content.querySelectorAll('.paper')];while(!fits()&&ps.length>1)ps.pop().classList.add('fit-hidden');};
+ const html=content.innerHTML,group=selected?R.nodes.filter(n=>theme==='all'||n.tags.includes(theme)).map(n=>panelHTML(n.scale,n)):R.scales.map((_,s)=>panelHTML(s,null));
+ let condensed=false;
+ for(const h of group){content.innerHTML=h;hidePapers();if(!fits()){condensed=true;panel.classList.add('condensed');break;}}
+ content.innerHTML=html;hidePapers();panel.classList.toggle('scrolls',!fits());
  fitMore();
 }
 // Web fonts change line breaks after first layout; refit once they arrive.

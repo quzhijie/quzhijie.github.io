@@ -89,3 +89,5 @@ html:lang(en) .lang-zh,html:lang(zh-CN) .lang-en{display:none}
 /* Home panel: one layout for every scale, node and method; actions sit last; lists always two columns. */
 .region-list{grid-template-columns:1fr 1fr;gap:0 13px}.panel-divider .phase-tags{margin:0}.panel-actions .detail-link+.detail-link{margin-top:8px}.inspector.minimal .panel-actions .detail-link+.detail-link{margin-top:5px}
 .inspector.scrolls #panel-content{overflow-y:auto;scrollbar-width:thin}
+.project-callout a{color:var(--accent);white-space:nowrap}
+.inspector.compact .project-callout{padding:10px 12px;line-height:1.65;margin:14px 0}
