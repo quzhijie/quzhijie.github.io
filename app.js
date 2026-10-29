@@ -16,35 +16,34 @@ function paperLink(id){const p=byId[id];if(!p)return '';const a=p.authors.slice(
 // Keep only non-default state in the address, so the default view stays a clean URL.
 function syncURL(){if(location.protocol==='file:')return;const q=new URLSearchParams();if(scale!==1)q.set('scale',String(scale));if(theme!=='all')q.set('theme',theme);if(lang!=='en')q.set('lang',lang);const s=q.toString();history.replaceState(null,'',location.pathname+(s?'?'+s:'')+(selected?'#'+selected:''));}
 function renderPanel(){
- const i=ix(),n=R.nodes.find(n=>n.id===selected),th=R.themes[theme],accent=n?n.color:th?th.color:'#8ad2dd';
+ const i=ix(),n=R.nodes.find(n=>n.id===selected),th=R.themes[theme],sc=R.scales[scale],accent=n?n.color:th?th.color:'#8ad2dd';
  $('#inspector').style.setProperty('--accent',accent);$('#reset').hidden=!n;$('#panel-number').textContent=`0${scale+1} / ${n?(lang==='en'?'FIELD NOTES':'探索笔记'):(lang==='en'?'OVERVIEW':'全景')}`;
- let html;
+ // Every panel has the same shape: kicker, title, text, then divided sections, then the action buttons.
+ const section=(h,body)=>`<div class="panel-divider"><h3>${h}</h3>${body}</div>`;
+ const chips=(tags,link)=>`<div class="phase-tags${link?'':' method-tags'}">${tags.map(t=>link?`<a href="${themeURL(t)}"><span>${esc(R.themes[t].short[i])} ↗</span></a>`:`<span>${esc(R.themes[t].short[i])}</span>`).join('')}</div>`;
+ const themeLink=t=>`<a class="detail-link" href="${themeURL(t)}"><span>${txt('detail')}</span><span>↗</span></a>`;
+ let kicker=esc(sc.title[i].toUpperCase()),title,desc,body='',actions='',note='';
  if(n){
-  const relevant=theme==='all'?n.papers:n.papers.filter(id=>byId[id]?.tags.includes(theme));const links=relevant.slice(0,4);
-  if(n.method){
-   // Methods explain a technique: no theme-page links, themes shown as plain chips.
-   html=`<p class="panel-kicker method-kicker">◇ ${txt('method')}</p><h2>${n.title[i]}</h2><p class="panel-description">${n.description[i]}</p>`;
-   if(n.instruments)html+=`<div class="panel-divider"><h3>${txt('instruments')}</h3><p class="method-instruments">${esc(n.instruments[i])}</p></div>`;
-   html+=`<div class="panel-divider"><h3>${txt('usedFor')}</h3><div class="phase-tags method-tags">${n.tags.map(t=>`<span>${esc(R.themes[t].short[i])}</span>`).join('')}</div></div>`;
-   if((n.papers||[]).length)html+=`<div class="panel-divider"><h3>${txt('related')}</h3>${n.papers.slice(0,4).map(paperLink).join('')}${moreLink(n)}</div>`;
-  }else{
-  html=`<p class="panel-kicker">${esc(R.scales[scale].title[i].toUpperCase())}</p><h2>${n.title[i]}</h2><p class="panel-description">${n.description[i]}</p>`;
-  if(n.project)html+=`<div class="project-callout"><strong>${txt('epTitle')}</strong>${txt('ep')}</div><a class="all-index" href="https://www.mpe.mpg.de/7540556/news20201210" target="_blank" rel="noopener">${txt('bubblesSource')}</a>`;
-  const relevantThemes=theme==='all'?n.tags:[theme];
-  html+=`<div class="phase-tags">${relevantThemes.map(t=>`<a href="${themeURL(t)}"><span>${esc(R.themes[t].short[i])} ↗</span></a>`).join('')}</div>`;
-  if(n.zoom!==undefined)html+=`<button class="detail-link zoom-in" data-zoom="${n.zoom}"><span>${txt('zoom')}</span><span>＋</span></button>`;
-  if(links.length)html+=`<div class="panel-divider"><h3>${txt('related')}</h3>${links.map(paperLink).join('')}${moreLink(n)}</div>`;
-  html+=`<a class="detail-link" href="${themeURL(theme==='all'?n.tags[0]:theme)}"><span>${txt('detail')}</span><span>↗</span></a>`;
-  }
+  title=n.title[i];desc=n.description[i];
+  if(n.method)kicker+=` · ◇ ${txt('method')}`;
+  if(n.project)body+=`<div class="project-callout"><strong>${txt('epTitle')}</strong>${txt('ep')}</div><a class="all-index" href="https://www.mpe.mpg.de/7540556/news20201210" target="_blank" rel="noopener">${txt('bubblesSource')}</a>`;
+  if(n.instruments)body+=section(txt('instruments'),`<p class="method-instruments">${esc(n.instruments[i])}</p>`);
+  // Methods explain a technique, so their themes are plain labels rather than links to theme pages.
+  body+=section(txt('themes'),chips(n.method||theme==='all'?n.tags:[theme],!n.method));
+  const papers=n.method||theme==='all'?n.papers:n.papers.filter(id=>byId[id]?.tags.includes(theme));
+  if(papers.length)body+=section(txt('related'),papers.slice(0,4).map(paperLink).join('')+moreLink(n));
+  if(n.zoom!==undefined)actions+=`<button class="detail-link zoom-in" data-zoom="${n.zoom}"><span>${txt('zoom')}</span><span>＋</span></button>`;
+  if(!n.method)actions+=themeLink(theme==='all'?n.tags[0]:theme);
  }else{
-  html=`<p class="panel-kicker">${th?esc(th.short[i].toUpperCase()):'THE COSMIC ECOSYSTEM'}</p><h2>${th?th.title[i]:txt('overview')}</h2><p class="panel-description">${th?th.intro[i]:txt('overviewDesc')}</p>`;
-  if(th)html+=`<a class="detail-link" href="${themeURL(theme)}"><span>${txt('detail')}</span><span>↗</span></a>`;
+  // Each scale has its own introduction; a chosen theme filters the lists and adds its own link.
+  title=sc.headline[i];desc=sc.intro[i];if(th)kicker+=` · ${esc(th.short[i].toUpperCase())}`;
   const item=n=>`<button data-node="${n.id}"${n.method?' class="method-item"':''}><span>${n.method?'◇ ':''}${esc(n.label[i])}</span><span>↗</span></button>`,objs=currentNodes().filter(n=>!n.method),meths=currentNodes().filter(n=>n.method);
-  html+=`<div class="panel-divider"><h3>${txt('explore')}</h3><div class="region-list">${objs.map(item).join('')}</div></div>`;
-  if(meths.length)html+=`<div class="panel-divider"><h3>${txt('methods')}</h3><div class="region-list">${meths.map(item).join('')}</div></div>`;
-  if(th){const pp=th.highlights.map(x=>x.paper).filter(id=>P.some(p=>p.id===id));html+=`<div class="panel-divider"><h3>${txt('related')}</h3>${pp.slice(0,1).map(paperLink).join('')}</div>`;}
-  html+=`<p class="scale-note">${R.scales[scale].description[i]}</p>`;
+  body+=section(txt('explore'),`<div class="region-list">${objs.map(item).join('')}</div>`);
+  if(meths.length)body+=section(txt('methods'),`<div class="region-list">${meths.map(item).join('')}</div>`);
+  if(th)actions+=themeLink(theme);
+  note=`<p class="scale-note">${txt('overviewDesc')}</p>`;
  }
+ const html=`<p class="panel-kicker">${kicker}</p><h2>${title}</h2><p class="panel-description">${desc}</p>${body}${actions?`<div class="panel-actions">${actions}</div>`:''}${note}`;
  $('#all-index-footer').href=`publications.html${lang==='zh'?'?lang=zh':''}`;$('#all-index-footer').textContent=txt('full');
  $('#panel-content').innerHTML=html;$('#panel-content').scrollTop=0;fitPanel();
  if(!reduced.matches)$('#panel-content').animate([{opacity:.3},{opacity:1}],{duration:220});
