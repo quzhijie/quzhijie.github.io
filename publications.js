@@ -1885,5 +1885,43 @@ window.PUBLICATIONS = [
       "Optical"
     ],
     "status": "preprint"
+  },
+  {
+    "id": "KumarS2026",
+    "title": "The Cosmic Ultraviolet Baryon Survey X: Density and Pressure Profiles of Clumpy Circumgalactic Gas at z=0.4--0.7",
+    "authors": [
+      "Suyash Kumar",
+      "Hsiao-Wen Chen",
+      "Gwen C. Rudie",
+      "Zhijie Qu",
+      "Sean D. Johnson",
+      "Alexander Beckett",
+      "Sebastiano Cantalupo",
+      "Mandy C. Chen",
+      "David DePalma",
+      "Claude-Andre Faucher-Giguere",
+      "Sebastian Lopez",
+      "Nishant Mishra",
+      "Patrick Petitjean",
+      "Marc Rafelski",
+      "Michael Rauch",
+      "Joop Schaye",
+      "Fakhri S. Zahedy"
+    ],
+    "year": 2026,
+    "month": "oct",
+    "journal": "arXiv e-prints",
+    "volume": "",
+    "pages": "arXiv:2610.36088",
+    "url": "https://doi.org/10.48550/arXiv.2610.36088",
+    "tags": [
+      "census",
+      "flows"
+    ],
+    "role": "top5",
+    "observables": [
+      "UV"
+    ],
+    "status": "preprint"
   }
 ];
