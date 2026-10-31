@@ -1888,7 +1888,7 @@ window.PUBLICATIONS = [
   },
   {
     "id": "KumarS2026",
-    "title": "The Cosmic Ultraviolet Baryon Survey X: Density and Pressure Profiles of Clumpy Circumgalactic Gas at z=0.4--0.7",
+    "title": "The Cosmic Ultraviolet Baryon Survey X: Density and Pressure Profiles of Clumpy Circumgalactic Gas at z=0.4–0.7",
     "authors": [
       "Suyash Kumar",
       "Hsiao-Wen Chen",
