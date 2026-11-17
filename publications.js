@@ -1954,52 +1954,5 @@ window.PUBLICATIONS = [
     "role": "coauthor",
     "observables": [],
     "status": "preprint"
-  },
-  {
-    "id": "WangJing2026",
-    "title": "FEASTS and MHONGOOSE: H I Column Density Distribution at z=0 for N_ HI>10^17.8 cm^-2",
-    "authors": [
-      "Jing Wang",
-      "Xuchen Lin",
-      "Ze-Zhong Liang",
-      "W. J. G. De Blok",
-      "Hong Guo",
-      "Zhijie Qu",
-      "Celine Peroux",
-      "Kentaro Nagamine",
-      "Luis C. Ho",
-      "Dong Yang",
-      "Simon Weng",
-      "Claudia Del P. Lagos",
-      "Xinkai Chen",
-      "George Heald",
-      "J. Healy",
-      "Qifeng Huang",
-      "Peter Kamphuis",
-      "D. Kleiner",
-      "Di Li",
-      "Siqi Liu",
-      "F. M. Maccagni",
-      "Lister Staveley-Smith",
-      "Zherong Su",
-      "Freeke Van De Voort",
-      "Fabian Walter",
-      "Fangxiong Zhong",
-      "Siwei Zou"
-    ],
-    "year": 2026,
-    "month": "apr",
-    "journal": "ApJ",
-    "volume": "1001",
-    "pages": "123",
-    "url": "https://doi.org/10.3847/1538-4357/ae5178",
-    "tags": [
-      "census"
-    ],
-    "role": "coauthor",
-    "observables": [
-      "H I"
-    ],
-    "status": "published"
   }
 ];
