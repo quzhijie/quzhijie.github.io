@@ -1923,5 +1923,83 @@ window.PUBLICATIONS = [
       "UV"
     ],
     "status": "preprint"
+  },
+  {
+    "id": "ChenZ2026",
+    "title": "The Cool Circumgalactic Echo of the Stellar-to-Halo Mass Relation",
+    "authors": [
+      "Zeyu Chen",
+      "Enci Wang",
+      "Huiyuan Wang",
+      "Houjun Mo",
+      "Luis C. Ho",
+      "Haoran Yu",
+      "Zhijie Qu",
+      "Hu Zou",
+      "Siwei Zou",
+      "Zhicheng He",
+      "Cheqiu Lyu",
+      "Chengyu Ma",
+      "Weiwen Kong"
+    ],
+    "year": 2026,
+    "month": "nov",
+    "journal": "arXiv e-prints",
+    "volume": "",
+    "pages": "arXiv:2611.12734",
+    "url": "https://doi.org/10.48550/arXiv.2611.12734",
+    "tags": [
+      "census"
+    ],
+    "role": "coauthor",
+    "observables": [],
+    "status": "preprint"
+  },
+  {
+    "id": "WangJing2026",
+    "title": "FEASTS and MHONGOOSE: H I Column Density Distribution at z=0 for N_ HI>10^17.8 cm^-2",
+    "authors": [
+      "Jing Wang",
+      "Xuchen Lin",
+      "Ze-Zhong Liang",
+      "W. J. G. De Blok",
+      "Hong Guo",
+      "Zhijie Qu",
+      "Celine Peroux",
+      "Kentaro Nagamine",
+      "Luis C. Ho",
+      "Dong Yang",
+      "Simon Weng",
+      "Claudia Del P. Lagos",
+      "Xinkai Chen",
+      "George Heald",
+      "J. Healy",
+      "Qifeng Huang",
+      "Peter Kamphuis",
+      "D. Kleiner",
+      "Di Li",
+      "Siqi Liu",
+      "F. M. Maccagni",
+      "Lister Staveley-Smith",
+      "Zherong Su",
+      "Freeke Van De Voort",
+      "Fabian Walter",
+      "Fangxiong Zhong",
+      "Siwei Zou"
+    ],
+    "year": 2026,
+    "month": "apr",
+    "journal": "ApJ",
+    "volume": "1001",
+    "pages": "123",
+    "url": "https://doi.org/10.3847/1538-4357/ae5178",
+    "tags": [
+      "census"
+    ],
+    "role": "coauthor",
+    "observables": [
+      "H I"
+    ],
+    "status": "published"
   }
 ];
